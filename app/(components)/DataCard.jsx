@@ -6,31 +6,20 @@ const MenuItem = ({ title, description, hasDescription }) => {
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
-    <div style={{ marginBottom: "1rem" }}>
-      <div
-        onClick={toggleOpen}
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          cursor: "pointer",
-          fontWeight: "bold",
-        }}
-      >
-        <span>{title}</span>
-        <span>{isOpen ? "x" : "+"}</span>
+    <div className="flex flex-col">
+      <div onClick={toggleOpen} className="flex flex-row justify-around">
+
+      <h3>
+        Cholestrol 
+      </h3>
+      
+      <p className={`transiton-all duration-300 ${!isOpen?"":"rotate-45"}`}>+</p>
       </div>
-      <div
-        style={{
-          maxHeight: isOpen ? "200px" : "0",
-          overflow: "hidden",
-          transition: "max-height 0.3s ease-in-out",
-          marginTop: isOpen ? "0.5rem" : "0",
-          color: "#555",
-          fontSize: "0.9rem",
-        }}
-      >
-        {hasDescription && <div>{description}</div>}
-      </div>
+    <div className={`border-1 overflow-clip transiton-all duration-300 bg-gray-400 ${!isOpen?"h-0":"h-16"}`}>
+      <p className="w-1/2 mx-auto my-2">INfo</p>
+      <p className="w-1/2 mx-auto my-2">INfo</p>
+      <p className="w-1/2 mx-auto my-2">INfo</p>
+    </div>
     </div>
   );
 };
@@ -59,8 +48,11 @@ const DataCard = () => {
   ];
 
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto", fontFamily: "Arial, sans-serif" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Heart</h2>
+    <div >
+      <h2 className="text-4xl font-bold">Heart</h2>
+      <div className="w-1/2 flex flex-row">
+        
+      </div>
       {items.map((item, index) => (
         <MenuItem
           key={index}

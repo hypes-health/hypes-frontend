@@ -3,7 +3,7 @@ import DataCard from './DataCard'
 
 function Data(...data) {
   return (
-    <div>
+    <div className='w-3/4 m-auto'>
      <DataCard/>
     </div>
   )
