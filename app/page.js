@@ -43,6 +43,9 @@ export default function Home() {
         (!data) &&
       <Navbar/>
       }
+      <h1 className="text-5xl font-bold w-1/2 leading-relaxed m-auto text-center">
+        WELCOME TO HYPES
+        </h1>
     </div>
   );
 }

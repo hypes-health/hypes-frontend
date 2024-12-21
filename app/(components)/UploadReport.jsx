@@ -15,17 +15,21 @@ import { CalendarIcon } from "lucide-react";
 import axios from "axios";
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { ReportContext } from "../(pages)/home/page";
 function UploadReport() {
   const [date, setDate] = useState("");
   const [name, setName] = useState("");
   const [report, setReport] = useState();
-  const [result, setResult] = useState();
+
+  const { currentReport, setCurrentReport } = useContext(ReportContext);
+  
+
   const handleSubmit = async () => {
     const data = { name, date, report };
     console.log(data);
@@ -37,14 +41,17 @@ function UploadReport() {
       })
       .then(async (response) => {
         // handle the response
-        setResult(response.data);
+        setCurrentReport(response.data);
+        setDate("")
+        setName("")
+        setReport("")
       })
       .catch((error) => {
         // handle errors
         console.log(error);
       });
 
-    console.log(result);
+    console.log(currentReport);
   };
   return (
     <Dialog>
