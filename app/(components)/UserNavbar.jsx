@@ -12,7 +12,7 @@ export default function UserNavbar() {
       </Link>
       <div className="hidden md:flex gap-4">
         <div className="text-lg font-medium hover:underline underline-offset-4" >
-         <UploadReport/>
+         
         </div>
         <Link href="/auth/logout" className="text-lg font-medium hover:underline underline-offset-4" prefetch={false}>
             Logout
@@ -38,9 +38,7 @@ export default function UserNavbar() {
           <div className="grid w-[200px] p-4">
             <SheetTitle>
 
-            <Link href="#" className="text-lg font-medium hover:underline underline-offset-4" prefetch={false}>
-             <UploadReport/>
-            </Link>
+            
             </SheetTitle>
             <SheetTitle>
 

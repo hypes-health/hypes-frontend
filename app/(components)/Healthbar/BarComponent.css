@@ -1,0 +1,54 @@
+.vertical-bar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  width: 120px;
+}
+
+.vertical-bar {
+  display: flex;
+  flex-direction: column;
+  height: 50px; /* Adjust height as needed */
+  width: 20px; /* Width of the vertical bar */
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.above-range {
+  flex: 3; /* Adjust height proportionally */
+}
+
+.in-range {
+  flex: 2; /* Adjust height proportionally */
+}
+
+.below-range {
+  flex: 1; /* Adjust height proportionally */
+}
+
+.range-label {
+  position: absolute;
+  right: -80px;
+  font-size: 12px;
+  color: #000;
+  transform: translateY(-50%);
+}
+
+.value-label {
+  position: absolute;
+  left: -30px;
+  font-size: 10px;
+  background-color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}

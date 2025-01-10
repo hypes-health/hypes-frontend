@@ -37,13 +37,13 @@ export default function Navbar() {
           <div className="grid w-[200px] p-4">
             <SheetTitle>
 
-            <Link href="#" className="text-lg font-medium hover:underline underline-offset-4" prefetch={false}>
+            <Link href="/auth/login" className="text-lg font-medium hover:underline underline-offset-4" prefetch={false}>
               LOGIN
             </Link>
             </SheetTitle>
             <SheetTitle>
 
-            <Link href="#" className="text-lg font-medium hover:underline underline-offset-4" prefetch={false}>
+            <Link href="/auth/signup" className="text-lg font-medium hover:underline underline-offset-4" prefetch={false}>
               SIGNUP
             </Link>
             </SheetTitle>
