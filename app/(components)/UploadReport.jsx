@@ -22,7 +22,7 @@ function UploadReport() {
     console.log(data);
     
     await axios
-        .post("http://localhost:8000/api/user/uploadReport", data, {
+        .post("https://hypes-backend.vercel.app/api/user/uploadReport", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

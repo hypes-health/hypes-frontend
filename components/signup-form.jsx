@@ -25,7 +25,7 @@ export function SignupForm() {
     const {mutate , isError , isPending , error} = useMutation({
 		mutationFn : async({email , username , fullName , password})=>{
 			try {
-				const res =  await fetch('http://localhost:8000/api/auth/signup' , {
+				const res =  await fetch('https://hypes-backend.vercel.app/api/auth/signup' , {
 					method : "POST",
 					headers:{
 						"Content-Type" : "application/json"
