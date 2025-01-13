@@ -11,9 +11,10 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import toast from "react-hot-toast"
 export function SignupForm() {
-
+    const router = useRouter();
     const [formData , setFormData] = useState({
             fullName : "" , 
             username : "",
@@ -49,6 +50,7 @@ export function SignupForm() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		mutate(formData)	
+    router.push('/auth/login')
 	};
 
 	const handleInputChange = (e) => {

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Analyze from "./LoadingPages/Analyze";
+import { CountContext } from "../(pages)/home/page";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { ReportContext } from "../(pages)/home/page";
@@ -12,33 +13,36 @@ function UploadReport() {
   const [date, setDate] = useState("");
   const [name, setName] = useState("");
   const [report, setReport] = useState();
-
   const { currentReport, setCurrentReport } = useContext(ReportContext);
-  
+  const {count , setCount} = useContext(CountContext)
 
   const handleSubmit = async () => {
     setIsLoading(true);
     const data = { name, date, report };
     console.log(data);
+    
     await axios
-      .post("http://localhost:8000/api/user/uploadReport", data, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        withCredentials: true,
-      })
-      .then(async (response) => {
-        // handle the response
-        setIsLoading(false);
-        setCurrentReport(response.data ,report);
-        setDate("")
-        setName("")
+        .post("http://localhost:8000/api/user/uploadReport", data, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          withCredentials: true,
+        })
+        .then(async (response) => {
+          // handle the response
+          setIsLoading(false);
+          setCurrentReport(response.data ,report);
+          setDate("")
+          setName("")
+          setCount(count + 1)
+          console.log(count)
       })
       .catch((error) => {
         // handle errors
         setIsLoading(false);
         console.log(error);
       });
+    
 
   };
   if(isLoading)

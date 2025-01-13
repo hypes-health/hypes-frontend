@@ -22,10 +22,10 @@ const MenuItem = (item) => {
           </div>
 
       <div className={`px-5 overflow-hidden transition-all duration-500 ${isOpen ? "max-h-[50000px]" : "max-h-0"}`}>
-      <div class="text-[#575757] text-sm font-normal leading-[18.48px]">Indicates the amount of nitrogen in the blood derived from urea; assesses kidney function.</div>
-      <div class="h-[18px] justify-start items-center inline-flex">
-    <div class="text-[#3850ea] text-sm font-medium font-['Poppins'] leading-[18.48px]">Learn more</div>
-    <div class="w-[18px] h-[18px] relative  overflow-hidden"></div>
+      <div className="text-[#575757] text-sm font-normal leading-[18.48px]">Indicates the amount of nitrogen in the blood derived from urea; assesses kidney function.</div>
+      <div className="h-[18px] justify-start items-center inline-flex">
+    <div className="text-[#3850ea] text-sm font-medium font-['Poppins'] leading-[18.48px]">Learn more</div>
+    <div className="w-[18px] h-[18px] relative  overflow-hidden"></div>
 </div>
 <div>
 
@@ -54,10 +54,10 @@ const DataCard = (test) => {
         {test.parameters?.map((item, index) => (
           <MenuItem key={index} {...item} />
         ))}
-      <div class="h-[183px] p-5  rounded-lg flex-col justify-start items-start gap-3 inline-flex">
-    <div class="w-6 h-6 relative  overflow-hidden"></div>
-    <div class="text-black text-base font-medium font-['Poppins'] leading-[21.12px]">Clinician Notes</div>
-    <div class="self-stretch text-[#686868] text-sm font-normal font-['Poppins'] leading-[18.48px]">Your thyroid levels suggest mild imbalance. This can affect energy, metabolism, and mood. Regular monitoring and addressing deficiencies, like iodine or selenium, can help maintain optimal thyroid health.</div>
+      <div className="h-[183px] p-5  rounded-lg flex-col justify-start items-start gap-3 inline-flex">
+    <div className="w-6 h-6 relative  overflow-hidden"></div>
+    <div className="text-black text-base font-medium font-['Poppins'] leading-[21.12px]">Clinician Notes</div>
+    <div className="self-stretch text-[#686868] text-sm font-normal font-['Poppins'] leading-[18.48px]">Your thyroid levels suggest mild imbalance. This can affect energy, metabolism, and mood. Regular monitoring and addressing deficiencies, like iodine or selenium, can help maintain optimal thyroid health.</div>
 </div>
       </div>
 

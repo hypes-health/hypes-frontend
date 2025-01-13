@@ -48,9 +48,8 @@ const VerticalRangeChart = ({value , lowerLimit , upperLimit}) => {
           <p className="mt-3">Below Range</p>
         </div>
       </div>
-        <div className="flex flex-row items-center justify-around w-1/2">
-       <DataPoint value={value*1.8} lowerLimit={lowerLimit} upperLimit={upperLimit}/>
-       <DataPoint value={value*1.14} lowerLimit={lowerLimit} upperLimit={upperLimit}/>
+        <div className="flex flex-row items-center justify-around w-3/4">
+
        <DataPoint value={value} lowerLimit={lowerLimit} upperLimit={upperLimit}/>
         
         </div>

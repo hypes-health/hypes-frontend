@@ -36,9 +36,9 @@ function Report() {
 <h2 className='text-black text-2xl w-[90%] font-medium leading-loose m-auto'>
 Health Summary
 </h2>
-<div class="text-gray-600 p-5 text-sm font-normal  leading-tight">Good job! You’re on the right track, but there’s room for improvement in a few areas.</div>
+<div className="text-gray-600 p-5 text-sm font-normal  leading-tight">Good job! You’re on the right track, but there’s room for improvement in a few areas.</div>
 </div>
-<div class="text-black text-base font-medium p-5 leading-[21.12px]">{numberOfParameters} Biomarkers</div>
+<div className="text-black text-base font-medium p-5 leading-[21.12px]">{numberOfParameters} Biomarkers</div>
 <div className="flex items-end gap-4 p-4 bg-white rounded shadow-md">
       {/* In Range */}
       <div className="flex flex-col items-center ml-20">
@@ -55,7 +55,7 @@ Health Summary
       </div>
     </div>
 
-<div class="text-black text-2xl font-medium leading-loose">Blood Markers</div>
+<div className="text-black text-2xl font-medium leading-loose">Blood Markers</div>
 <Data {...currentReport}/>
     </div>
   )
