@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 const DataPoint = ({value , lowerLimit , upperLimit}) => {
       const [count , setCount] = useState(0)
-      axios.get('https://hypes-2.vercel.app//api/user/count')
+      axios.get('https://hypes-2.vercel.app/api/user/count')
         .then(response => {
           console.log(response)
           setCount(response)

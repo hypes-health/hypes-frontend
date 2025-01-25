@@ -27,7 +27,7 @@ const {mutate , isError , isPending , error} = useMutation({
 mutationFn : async({username ,password})=>{
 try {
 console.log(formData)
-const res =  await fetch('https://hypes-2.vercel.app//api/auth/login' , {
+const res =  await fetch('https://hypes-2.vercel.app/api/auth/login' , {
   method : "POST",
   headers:{
     "Content-Type" : "application/json"

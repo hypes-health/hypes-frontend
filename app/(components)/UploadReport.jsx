@@ -21,7 +21,7 @@ function UploadReport() {
     const data = { name, date, report };
     setTimeout(1000)    
     await axios
-        .post("https://hypes-2.vercel.app//api/user/uploadReport", data, {
+        .post("https://hypes-2.vercel.app/api/user/uploadReport", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
