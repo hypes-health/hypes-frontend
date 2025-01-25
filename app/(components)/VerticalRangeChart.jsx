@@ -1,6 +1,17 @@
 import React from "react";
-
+import axios from "axios";
+import { useState } from "react";
 const DataPoint = ({value , lowerLimit , upperLimit}) => {
+      const [count , setCount] = useState(0)
+      axios.get('https://hypes-2.vercel.app//api/user/count')
+        .then(response => {
+          console.log(response)
+          setCount(response)
+        })
+        .catch(error => {
+          console.error('There was an error fetching the data!', error);
+        });
+   
     let topPosition = 40 ;
     if(value<lowerLimit){
         topPosition = 70;}
@@ -49,8 +60,10 @@ const VerticalRangeChart = ({value , lowerLimit , upperLimit}) => {
         </div>
       </div>
         <div className="flex flex-row items-center justify-around w-3/4">
-
-       <DataPoint value={value} lowerLimit={lowerLimit} upperLimit={upperLimit}/>
+        {[...Array(count-1)].map((_, i) => (
+          <DataPoint key={i} value={value *(1-0.1*(i+1))} lowerLimit={lowerLimit} upperLimit={upperLimit} />
+        ))}
+          <DataPoint  value={value} lowerLimit={lowerLimit} upperLimit={upperLimit} />
         
         </div>
       

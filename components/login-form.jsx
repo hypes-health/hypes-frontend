@@ -27,7 +27,7 @@ const {mutate , isError , isPending , error} = useMutation({
 mutationFn : async({username ,password})=>{
 try {
 console.log(formData)
-const res =  await fetch('https://hypes-backend.vercel.app/api/auth/login' , {
+const res =  await fetch('https://hypes-2.vercel.app//api/auth/login' , {
   method : "POST",
   headers:{
     "Content-Type" : "application/json"
@@ -39,12 +39,13 @@ const res =  await fetch('https://hypes-backend.vercel.app/api/auth/login' , {
 
 const data = await res.json();
 if(!res.ok) throw new Error(data.error || "Failed to create account")
-toast.success("Login Successfull")
+alert("Login Successfull")
+push('/home');
 return data;
 
 } catch (error) {
 console.log(error)
-toast.error(error.message)
+alert(error.message)
 }
 },
 
@@ -53,7 +54,6 @@ toast.error(error.message)
 const handleSubmit = (e) => {
 e.preventDefault();
 mutate(formData)	
-push('/home');
 };
 
 const handleInputChange = (e) => {

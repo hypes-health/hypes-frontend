@@ -19,14 +19,14 @@ function UploadReport() {
   const handleSubmit = async () => {
     setIsLoading(true);
     const data = { name, date, report };
-    console.log(data);
-    
+    setTimeout(1000)    
     await axios
-        .post("https://hypes-backend.vercel.app/api/user/uploadReport", data, {
+        .post("https://hypes-2.vercel.app//api/user/uploadReport", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          withCredentials: true,
+          withCredentials : true
+        
         })
         .then(async (response) => {
           // handle the response
@@ -34,8 +34,7 @@ function UploadReport() {
           setCurrentReport(response.data ,report);
           setDate("")
           setName("")
-          setCount(count + 1)
-          console.log(count)
+          
       })
       .catch((error) => {
         // handle errors

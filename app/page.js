@@ -11,7 +11,7 @@ export default function Home() {
     queryKey : ["authUser"] ,
     queryFn :async()=>{
       try {
-        const res = await fetch("https://hypes-backend.vercel.app/api/auth/getMe" , {
+        const res = await fetch("https://hypes-2.vercel.app//api/auth/getMe" , {
           method: 'GET',
     credentials: 'include',
     headers: {
